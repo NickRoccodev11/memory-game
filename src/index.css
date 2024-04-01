@@ -10,7 +10,7 @@ body {
 .play-again {
   position: relative;
   top: 20%;
-  left: 66%;
+  left: 76%;
   text-align: center;
   color: #6e2c2c;
   text-shadow: 0px 2px 5px rgb(211, 129, 129);
@@ -95,12 +95,43 @@ body {
   top: 27px;
   font-size: 3rem;
 }
+#start{
+  text-align: center;
+  width:300px;
+  margin-left: 35%;
+}
+
+#start>form{
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ 
+}
+#start>form>button{
+  color: rgb(57, 47, 35);
+  padding:10px;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-weight: bold;
+}
 
 @media(max-width:375px) {
   #app {
     margin: 0;
   }
-
+  #start{
+    text-align: center;
+  }
+  #start>form{
+    margin-left:20px;
+    width:300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   
+  }
   #board {
     position: relative;
     bottom: 40px;

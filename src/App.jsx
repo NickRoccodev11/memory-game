@@ -5,31 +5,31 @@ import cards from './data.js';
 import { useState, useEffect } from 'react';
 //components
 import Card from './Card.jsx';
+import Start from './Start.jsx';
 
 function App() {
+  const [start, setStart] = useState(true)
   const [deck, setDeck] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [win, setWin] = useState(false);
   const [lose, setLose] = useState(false);
   const [tries, setTries] = useState(5);
 
-  const message = win ? "WON" : lose ? "LOST" : "";
-
   //Fisher-Yates shuffle algorithm
-  function shuffle(array) {
-    let currentIndex = array.length;
+  const shuffle = deck => {
+    let currentIndex = deck.length;
     while (currentIndex != 0) {
       let randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      [deck[currentIndex], deck[randomIndex]] = [
+        deck[randomIndex], deck[currentIndex]];
     }
+    setDeck(deck)
   }
 
   //start the first game
   useEffect(() => {
     shuffle(cards);
-    setDeck(cards);
   }, [])
 
   //when two cards are flipped, check for a match/miss
@@ -61,20 +61,26 @@ function App() {
   return (
     <div id="app">
       <div id="board">
-        {win || lose?
+        {win || lose ?
           <div className='play-again'>
-            <h1>YOU {message}!</h1>
+            <h1>YOU {win ? "WON" : "LOST"}!</h1>
             <button onClick={() => {
               cards.forEach(card => card.solved = false);
+              setTries(5);
               setFlipped([]);
-              shuffle(cards);
-              setDeck(cards);
+              shuffle(deck)
               setWin(false);
               setLose(false);
-              setTries(5);
-            }}>
+              setStart(true)
+              }
+            }>
               play again</button>
           </div> :
+          start ?
+            <Start
+              setStart={setStart}
+              setTries={setTries}
+            /> :
             <>
               {
                 deck.map((card, idx) => {
