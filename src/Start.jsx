@@ -19,7 +19,7 @@ const Start = ({ setTries, setStart }) => {
             onClick={() => {
               setTries(5);
             }}
-          >normal</button> <br />
+          >Normal</button> <br />
           <button className="orange"
             onClick={() => {
               setTries(4);
