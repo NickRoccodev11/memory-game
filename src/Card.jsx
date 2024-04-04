@@ -6,7 +6,9 @@ const Card = ({ card, flipped, setFlipped, }) => {
         <div
           className="flip-card-front"
           onClick={() => {
-            setFlipped([...flipped, card])
+            if (flipped.length < 2) {
+              setFlipped([...flipped, card])
+            }
           }}
         >
         </div>

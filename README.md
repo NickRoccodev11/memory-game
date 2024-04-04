@@ -5,4 +5,4 @@ Memory game
 NEWLY ADDED: difficulty screen. the user can set anwhere from 6-3 tries, rated easy to unfair.
 
 Netlify deployment: 
-https://660abba3079846ad3ad9c725--warm-haupia-08fa44.netlify.app/
+https://660f03f1a09f564934730f68--beamish-kleicha-891a51.netlify.app/

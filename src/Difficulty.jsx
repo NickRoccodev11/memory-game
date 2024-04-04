@@ -1,13 +1,13 @@
 
 
-const Start = ({ setTries, setStart }) => {
+const Difficulty = ({ setTries, setDifficulty }) => {
   return (
     <div id="startcontainer">
-      <div id="start">
+      <div id="difficulty">
         <h3>choose difficulty:</h3>
         <form onSubmit={(e) => {
           e.preventDefault();
-          setStart(false)
+          setDifficulty(false)
         }}
         >
           <button className="green"
@@ -36,4 +36,4 @@ const Start = ({ setTries, setStart }) => {
   )
 }
 
-export default Start
+export default Difficulty

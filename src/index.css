@@ -95,19 +95,19 @@ body {
   top: 27px;
   font-size: 3rem;
 }
-#start{
+#difficulty{
   text-align: center;
   width:300px;
 }
 
-#start>form{
+#difficulty>form{
   display: flex;
  flex-direction: column;
  justify-content: center;
  align-content: center;
  
 }
-#start>form>button{
+#difficulty>form>button{
   color: rgb(57, 47, 35);
   padding:10px;
   margin-bottom: 10px;
@@ -119,10 +119,10 @@ body {
   #app {
     margin: 0;
   }
-  #start{
+  #difficulty{
     text-align: center;
   }
-  #start>form{
+  #difficulty>form{
     margin-left:20px;
     width:300px;
    display: flex;

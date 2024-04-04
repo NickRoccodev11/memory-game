@@ -5,10 +5,10 @@ import cards from './data.js';
 import { useState, useEffect } from 'react';
 //components
 import Card from './Card.jsx';
-import Start from './Start.jsx';
+import Difficulty from './Difficulty.jsx';
 
 function App() {
-  const [start, setStart] = useState(true)
+  const [difficulty, setDifficulty] = useState(true)
   const [deck, setDeck] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [win, setWin] = useState(false);
@@ -27,7 +27,7 @@ function App() {
     setDeck(deck)
   }
 
-  //start the first game
+  //difficulty the first game
   useEffect(() => {
     shuffle(cards);
   }, [])
@@ -71,14 +71,14 @@ function App() {
               shuffle(deck)
               setWin(false);
               setLose(false);
-              setStart(true)
+              setDifficulty(true)
               }
             }>
               play again</button>
           </div> :
-          start ?
-            <Start
-              setStart={setStart}
+          difficulty ?
+            <Difficulty
+              setDifficulty={setDifficulty}
               setTries={setTries}
             /> :
             <>
